@@ -1,0 +1,1109 @@
+body {
+    margin: 0;
+    padding: 0;
+    max-width: 2000px;
+    overflow-x: hidden; 
+    margin: auto;
+}
+
+:root
+{
+	--color-red: #E30613;
+	--color-lightred: #FF3A39;
+	--color-hoverlightred: #FF8888;
+	--color-grey: #353535;
+	--color-darkgrey: #202020;
+	--color-gray: #585858;
+	--color-white: #FFFFFF;
+
+	--transition-default-timing: 300ms;
+
+	--border-radius: 15px;
+	--body-margin: 15px 10% 0 10%;
+}
+
+p, h1, h2, h3, a, table, img
+{
+	font-family: sans-serif;
+} 
+
+main
+{
+	
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+/*  dark mode */
+
+.light-mode, .dark-mode {
+    background-color: #ffffff; /* Default for light mode */
+    width: 100px;
+    height: 100px;
+    display: flex;
+    margin-left: 45%;
+  }
+  
+  .dark-mode {
+    background-color: #1e1e1e; /* Background for dark mode */
+  }
+  
+  /* Image Button Styling */
+  .mode-switch {
+    width: 100px; /* Explicit size for the sun/moon */
+    height: 100px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .mode-switch:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+  }
+.icon-wrapper {
+    background-color: white;
+}
+
+/* fin dark mode */
+
+/*-- HEADER ---*/
+
+
+header
+{
+	background-color: var(--color-white);
+	box-sizing: border-box;
+}
+
+header>div>div
+{
+	background-color: var(--color-white);
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr 1fr 5fr 1fr;
+	margin: 0 5% 0 5%;
+	align-items: center;
+}
+header>div>div:nth-of-type(3)
+{
+	grid-row: 3/3;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between; /* Place les éléments aux extrémités */
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+
+.logo-droit {
+    position: absolute;
+    align-items: center;
+    top : 20px;
+    right : 20px;
+}
+
+.logo-gauche {
+    position: absolute;
+    top : 10px;
+    left : 20px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-gauche img {
+    margin-right: 10px; /* Space between left logos */
+    height: 100px; /* Adjust height uniformly */
+}
+
+.logo-droit img {
+    height: 100px; /* Ensure consistent size for right logo */
+}
+.nav-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly; /* Texte espacé équitablement */
+    align-items: center;
+    background-color: var(--color-lightred);
+	padding: 25px;
+	flex-wrap: nowrap;
+	position: relative;
+}
+
+
+.menu {
+    display: flex;
+    justify-content: space-evenly; /* Également espacé dans le menu */
+    align-items: center;
+    width: 100%; /* Prend toute la largeur */
+   
+}
+
+.menu li {
+    position: relative; /* Nécessaire pour positionner le sous-menu */
+    list-style: none;
+}
+
+.menu li a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color1);
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    padding: 10px 20px; /* Égalité entre éléments */
+}
+
+.menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color1);
+    transition: 0.15s ease-in-out;
+}
+
+.menu li a:hover:after {
+    width: 100%;
+}
+
+/*  Effet de survol  */
+
+.menu li:hover {
+    background-color: white; /* Change la couleur de fond au survol */
+    border-radius: 5px; /* Ajoute des coins arrondis */
+    transition: 0.3s ease-in-out; /* Effet de transition fluide */
+}
+
+.menu li a:hover {
+    color: black; /* Change la couleur du texte au survol */
+    background-color:white; /* Change la couleur de fond */
+    border-radius: 25px; /* Ajoute des coins arrondis */
+    padding: 12px 22px; /* Ajuste légèrement l'espacement */
+    transition: 0.3s ease-in-out; /* Transition douce */
+}
+
+
+.submenu li:hover {
+    background-color: white; /* Change la couleur de fond pour les sous-menus */
+    color: black    ; /* Change la couleur du texte pour les sous-menus */
+    transform: scale(1.1); /* Légèrement agrandi au survol */
+}
+
+.submenu {
+    display: none; /* Cache les sous-menus par défaut */
+    position: absolute; /* Positionne les sous-menus */
+    background-color: white; /* Couleur de fond */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre */
+    border-radius: 5px; /* Coins arrondis */
+}
+
+.menu li:hover .submenu {
+    display: block; /* Affiche les sous-menus au survol */
+    transition: all 0.3s ease-in-out; /* Transition fluide */
+}
+
+.menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px; /* Légèrement plus épais pour plus de visibilité */
+    background-color: wheat;
+    transition: width 0.3s ease-in-out; /* Ajoute une transition fluide */
+}
+
+.menu li a:hover:after {
+    width: 100%; /* Barre s’étend sur toute la largeur */
+}
+/* Fin de survol */
+
+
+.open-menu, .close-menu {
+    position: absolute;
+    color: var(--color1);
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+
+.open-menu {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.close-menu {
+    top: 20px;
+    right: 20px;
+}
+#check {
+    display: none;
+}
+header>.nav-bar>a, header>.nav-bar>a, .submenu > *
+{
+	color: var(--color-grey);
+	text-transform: uppercase;
+	font-family: sans-serif;
+	text-decoration: none;
+	font-weight: bold;
+	border: 5px solid transparent;
+	transition-property: color, border;
+	transition: var(--transition-default-timing) ease;
+}
+
+/* Nouveau style pour le sous-menu */
+.submenu {
+    display: none; /* Cache le sous-menu par défaut */
+    position: absolute;
+    top: 100%; /* Place le sous-menu directement sous l'élément parent */
+    left: 0;
+    background-color: red;
+    list-style: none;
+    padding: 0; /* Supprime les marges internes */
+    margin: 0; /* Supprime les marges */
+    width: 200px; /* Largeur fixe pour aligner tous les sous-menus */
+    z-index: 10; /* S'assure que le sous-menu est au-dessus */
+}
+
+/* Afficher le sous-menu lorsque l'élément parent est survolé */
+.has-submenu:hover .submenu {
+    display: block;
+}
+
+/* Style des éléments dans le sous-menu */
+.submenu li {
+    width: 100%; /* Largeur fixe pour alignement */
+}
+
+.submenu li a {
+    padding: 10px 20px;
+    color: black;
+    text-decoration: none;
+    display: block;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease-in-out;
+    text-align: left; /* Texte aligné à gauche dans le sous-menu */
+}
+
+/* Effet de survol pour les liens du sous-menu */
+.submenu li a:hover {
+    background-color: red;
+}
+
+
+/*-- FIN HEADER --*/
+
+/*debut contact*/
+.titre{
+	background-color: var(--color-lightred);
+    text-align: center;
+	padding: 10px;
+	margin: var(--body-margin);
+}
+
+.body1{
+    
+	margin: var(--body-margin);
+	background-color: var(--color-white);
+	border: 5px solid var(--color-red);
+	border-radius: var(--border-radius);
+}
+.body2{
+    
+	margin: var(--body-margin);
+	background-color: var(--color-white);
+
+
+}
+.body1_titre{
+	background-color: var(--color-hoverlightred);
+	padding: 1%;
+	margin: -5px;
+	border: 5px solid var(--color-lightred);
+	border-radius: var(--border-radius);
+	text-align: center;
+}
+
+.white{
+	color: white;
+}
+
+.container {
+    padding: 10px;
+	background-color: var(--color-darkgrey);
+	background-color: var(--color-lightred);
+  }
+.containergris {
+	padding: 10px;
+	background-color: var(--color-gray);
+    display: flex;
+
+  
+}  
+  
+.body_container {
+    width: 45%;
+    padding: 10px;
+    background-color: var(--color-lightred);
+    border: 2px solid rgb(80, 13, 13);
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 25px;
+  }
+  .body_container2 {
+    width: 45%;
+    padding: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 25px;
+  }
+
+
+
+.body_gauche{
+    padding: 20px;
+    margin: 15px;
+    width: 90%;
+	text-align: center;
+}
+.body2_gauche{
+    padding: 5px;
+    margin: 5px;
+    width: 48%;
+    display: inline-block;
+    border-radius : 25px; /* Ajoute un effet arrondi */
+    vertical-align: top;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour un effet esthétique */
+    transition: all 0.3s ease; /* Ajoute une animation au survol */
+
+}
+._{
+    display: inline-block;
+    vertical-align: middle;
+    width: 48%;
+    padding: 10px;
+	text-align: center;
+}
+.body_droite_g{
+    display: inline-block;
+    vertical-align: middle;
+    width: 48%;
+    padding: 10px;
+}
+.body_droite2{
+    display: inline-block;
+    vertical-align: middle;
+    width: 98%;
+    padding: 10px;
+    border-radius: 25px; /* Ajoute un effet arrondi */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour un effet esthétique */
+    transition: transform 0.3s ease; /* Ajoute une animation au survol */
+   
+    
+	
+}
+.body_droite2_2{
+    display: inline-block;
+    vertical-align: middle;
+	background-color: var(--color-lightred);
+    border: 2px solid rgb(80, 13, 13);
+    width: 98%;
+    padding: 10px;
+	
+}
+.map{
+	border-color: var(--color-red);
+	border-width: 5px;
+	border-style:solid;
+	border-radius: 25px;
+	height: 100%;
+	width: auto;
+}
+.facadecontact{
+	width: 100%;
+    border-radius: 25px;
+}
+
+
+
+
+/* La page index et c'est imam qui la fait */
+
+.bodyy_droite{
+	color: var(--color-white);
+	background-color: var(--color-grey);
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    padding: 5px;
+	font-size: 1.0em;
+    border-radius : 25px; /* effet arrondi */
+    vertical-align: top;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour un effet esthétique */
+    transition: all 0.3s ease; /* Ajoute une animation au survol */
+	
+}
+
+.bodyy2_droite{
+	background-color: var(--color-gray);
+	color: var(--color-white);
+	display: inline-block;
+	vertical-align: middle;
+    width: 100%;
+    padding: 0%;
+	font-size: 1.0em;
+    background-color: var(--color-grey);
+	color: var(--color-white);
+	font-size: 1.3em;
+    border-radius : 15px; /* Ajoute un effet arrondi */
+    vertical-align: top;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour un effet esthétique */
+    transition: all 0.3s ease; /* Ajoute une animation au survol */
+    margin-top: 10px;
+
+	
+}
+
+.bodyy_container2 {
+    width: 45%;
+    padding: 10px;
+    float: left;
+    
+
+}
+
+.titre1{
+	background-color: var(--color-darkgrey);
+    text-align: center;
+	padding: 10px;
+	color: var(--color-white);
+	text-decoration: underline;
+}
+
+
+
+
+.body22_gauche{
+    padding: 5px;
+    margin: 5px;
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+	padding-bottom: 100px;
+	
+
+} 
+
+.body22_gauche img {
+	width: 100%;
+	height: auto;
+	transition: transform 0.4s ease-in-out;
+}
+  
+.body22_gauche img:hover {
+	transform: scale(1.2); /* Ajustez la valeur selon le niveau de zoom souhaité */
+}
+
+.liste1 {
+	background-color: var(--color-gray);
+	color: var(--color-white);
+	font-size: 1.1em;
+    color: var(--color-white);
+	background-color: var(--color-grey);
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    padding: 5px;
+	font-size: 1.0em;
+    border-radius : 25px; /* effet arrondi */
+    vertical-align: top;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ombre pour un effet esthétique */
+    transition: all 0.3s ease; /* animation au survol */
+    margin-top: 10px;
+
+}
+
+.liste2 {
+	background-color: var(--color-grey);
+	color: var(--color-white);
+	font-size: 1.3em;
+    border-radius : 25px; /* effet arrondi */
+    vertical-align: top;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ombre pour un effet esthétique */
+    transition: all 0.3s ease; /* animation au survol */
+    margin-top: 10px;
+
+}
+
+
+
+.container2 {
+    padding: 10px;
+	background-color: var(--color-gray)
+}
+
+.body_container2>a
+{
+	background-color: var(--color-grey);
+	transition-property: background-color, color;
+	transition: var(--transition-default-timing) ease;
+	padding: 15px;
+}
+
+.body_container2>a:hover
+{
+	background-color: transparent;
+}
+
+a {
+	color: var(--color-white); /* Couleur normale du lien */
+	text-decoration: none; /* Supprime le soulignement par défaut */
+	transition: color 0.3s ease; /* Transition de couleur sur 0.3s avec une fonction d'accélération */
+}
+
+a:hover {
+	color: var(--color-red); /* Couleur du lien au survol */
+}
+
+button {
+	padding: 10px 20px;
+	font-size: 16px;
+	background-color: var(--color-grey);
+	color: var(--color-white);
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+}
+
+button:hover {
+	color: var(--color-red);
+}
+
+
+.body222_gauche{
+    padding: 5px;
+    margin: 5px;
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+    border-radius : 15px; /* Ajoute un effet arrondi */
+    vertical-align: top;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour un effet esthétique */
+    transition: all 0.3s ease; /* Ajoute une animation au survol */
+} 
+
+.facadecontact1 {
+	width: 100%;
+    margin-left: 8%;
+}
+
+
+.facadecontact2 {
+	width: 85%;
+    margin-left: 8%;
+}
+
+.titrecompt {
+	text-decoration: underline;
+}
+
+/* Effet de survol */
+button:hover {
+	background-color: var(--color-gray);
+}
+
+/*  FIN Index     */
+
+
+/* DEbut Contact */
+
+.champ{
+	width: 50%;
+	text-align: center;
+    width: 50%;
+    text-align: center;
+    border-radius: 20px; /* Ajoute un effet arrondi */
+    border: 1px solid var(--color-grey); /* Ajoute une bordure fine */
+    padding: 10px; /* Ajoute un espacement intérieur */
+}
+
+#message{
+    width: 700px;
+    height: 512px;
+    resize: none;
+    text-align: left;
+    border-radius: 10px; /* Ajoute un effet arrondi */
+    border: 1px solid var(--color-grey); /* Ajoute une bordure fine */
+    padding: 10px; /* Ajoute un espacement intérieur */
+
+}
+.btn-formulaire {
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: 20px;
+	text-align: center;
+	text-decoration: none;
+	background-color: var(--color-hoverlightred);
+	color: var(--color-grey);
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.btn-formulaire:hover {
+	background-color: var(--color-hoverlightred);
+	border-color: var(--color-gray);
+	transition: 0.3s;
+}
+
+
+#FOOTER
+{
+	padding: 20px;
+	background-color: var(--color-darkgrey);
+	display: grid;
+	grid-template-columns: 3fr 3fr 2fr;
+	grid-template-rows: 1fr;
+	color: var(--color-white);
+}
+   
+/*Fin contact*/
+
+
+
+
+/*-- DEBUT FOOTER --*/
+
+footer {
+    display: grid; /* Utilisation d'une grille */
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 20px; /* Espacement entre les colonnes */
+    padding: 20px;
+    background-color: var(--color-lightred); /* Couleur de fond */
+    border-top: 2px solid #ccc; /* Ligne séparatrice */
+    color: #333;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+	margin-top: 55px;
+}
+
+/* Colonne 1 : Adresse */
+footer .address {
+    grid-column: 1; /* Première colonne */
+    text-align: left;
+}
+
+/* Colonne 2 : Liens et CNIL */
+footer .links {
+    grid-column: 2; /* Deuxième colonne */
+    text-align: center;
+}
+
+footer .links h3 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    text-decoration: underline;
+}
+
+footer .links p a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer .links p a:hover {
+    text-decoration: underline;
+}
+
+footer .legal {
+    grid-column: 2; /* Position dans la même colonne que les liens */
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Colonne 3 : Équipe */
+footer .team {
+    grid-column: 3; /* Troisième colonne */
+    text-align: right;
+}
+
+
+
+
+
+/*-- FIN FOOTER --*/
+
+
+/*
+	DEBUT PAGE PRESENTATION BUT
+*/
+#BLOCS_COMPETENCES
+{
+	background-color: var(--color-grey);
+	color: var(--color-white);
+	padding: 15px;
+}
+
+#BLOCS_COMPETENCES>article
+{
+	column-gap: 30px;
+	background-color: var(--color-gray);
+	border-radius: 15px;
+	padding: 15px;
+	margin: 30px 0 30px 0;
+	text-align: center;
+}
+#BLOCS_COMPETENCES>article:nth-of-type(2n+1)
+{
+	display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; grid-template-rows: 1fr 1fr;
+}
+#BLOCS_COMPETENCES>article:nth-of-type(2n)
+{
+	display: grid; grid-template-columns: 1fr 1fr 1fr 2fr; grid-template-rows: 1fr 1fr;
+}
+
+#BLOCS_COMPETENCES>h2
+{
+	text-align: center;
+}
+
+#BLOCS_COMPETENCES>article:nth-of-type(2n+1)>:first-child
+{
+	grid-column: 1/1;
+	grid-row: 1 / span 2;
+}
+#BLOCS_COMPETENCES>article:nth-of-type(2n)>:first-child
+{
+	grid-column: 4/4;
+	grid-row: 1 / span 2;
+}
+#BLOCS_COMPETENCES>article>*
+{
+	align-self: center;
+}
+
+.tableau_gras {
+    font-weight: bold;
+}
+
+
+
+/*
+	FIN PAGE PRESENTATION BUT
+*/
+
+/*
+	DEBUT COMPETENCES
+*/
+
+#SELECT_COMPETENCES
+{
+	margin: 10% 0 10% 0;
+	text-align: center;
+	display: grid; 
+	grid-template-columns: 1fr 1fr 1fr; 
+	grid-template-rows: 1fr 1fr; 
+	grid-column-gap: 5%;
+	grid-row-gap: 7vh;
+}
+
+#SELECT_COMPETENCES>a
+{
+	text-transform: uppercase;
+	border: solid 3px var(--color-lightred);
+	background-color: var(--color-gray);
+	color: var(--color-white);
+	padding: 5vh 0 5vh 0;
+	transition-property: transform, color;
+	transition: ease var(--transition-default-timing);
+	border-radius: 15px;
+	font-weight: bold;
+}
+
+#SELECT_COMPETENCES>a:hover
+{
+	transform: scale(1.2);
+	color: var(--color-red);
+}	
+
+/*
+	FIN COMPETENCES
+*/
+
+
+ /* Responsive  */
+@media (max-width: 768px) {
+    footer {
+        grid-template-columns: 1fr; /* Une seule colonne */
+        text-align: center;
+    }
+
+    footer .address,
+    footer .links,
+    footer .legal,
+    footer .team {
+        grid-column: 1;
+        margin-bottom: 20px;
+    }
+
+    footer .links p a {
+        display: block; /* Liens sur des lignes séparées */
+        margin: 5px 0;
+    }
+}
+ @media(max-width: 610px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: var(--color-lightred);
+        transition: all 0.2s ease-in-out;
+    }
+
+    .menu li {
+        margin-top: 40px;
+		padding-left: 25px;
+    }
+
+    .menu li a {
+        padding: 10px;
+    }
+
+    .open-menu, .close-menu {
+        display: block;
+    }
+
+    #check:checked ~ .menu {
+        right: 0;
+    }
+	.submenu {
+		display: none; /* Cache le sous-menu par défaut */
+		position: absolute;
+		top: 100%; /* Place le sous-menu directement sous l'élément parent */
+		left: 0;
+		background-color: var(--color-lightred);
+		list-style: none;
+		padding: 0; /* Supprime les marges internes */
+		margin: 0; /* Supprime les marges */
+		width: 200px; /* Largeur fixe pour aligner tous les sous-menus */
+		z-index: 10; /* S'assure que le sous-menu est au-dessus */
+	}
+	
+	/* Afficher le sous-menu lorsque l'élément parent est survolé */
+	.has-submenu:hover .submenu {
+		display: block;
+	}
+	
+	/* Style des éléments dans le sous-menu */
+	.submenu li {
+		width: 100%; /* Largeur fixe pour alignement */
+	}
+	
+	.submenu li a {
+		padding: 10px 20px;
+		color: var(--color1);
+		text-decoration: none;
+		display: block;
+		text-transform: uppercase;
+		transition: background-color 0.2s ease-in-out;
+		text-align: left; /* Texte aligné à gauche dans le sous-menu */
+	}
+	
+	/* Effet de survol pour les liens du sous-menu */
+	.submenu li a:hover {
+		background-color: rgba(255, 255, 255, 0.2);
+	}
+	
+}
+
+
+
+/* 1. Mobile-first approach with responsive breakpoints */
+
+/* Mobile (default) */
+main
+{
+	
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+@media (max-width: 768px) {
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; 
+    }
+    
+  header>div>div {
+      grid-template-columns: 1fr 1fr;
+      margin: 0 10%;
+  }
+
+  iframe {
+      height: 150px;
+  }
+
+  header>nav {
+      flex-direction: column;
+      align-items: center;
+      padding: 15px;
+  }
+
+  header>nav>a {
+      margin-bottom: 10px;
+  }
+
+  .body_container, .body_container2, .body_gauche, .body_droite {
+      width: 100%;
+      padding: 10px;
+  }
+
+  .body_gauche, .body_droite {
+      text-align: center;
+  }
+  .body_droite {
+    height: 100px;
+    width: 150px;
+  }
+
+  .body_container2>a {
+      padding: 10px;
+  }
+
+  .container, .containergris, .container2 {
+      padding: 5px;
+  }
+
+  /* Footer adjustments */
+  #FOOTER {
+      display: block;
+      text-align: center;
+  }
+
+  #FOOTER > section {
+      margin-bottom: 10px;
+  }
+
+  /* Competence grid layout */
+  #SELECT_COMPETENCES {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+  }
+
+  #SELECT_COMPETENCES > a {
+      padding: 4vh 0;
+  }
+
+  .map {
+      width: 100%;
+      height: auto;
+  }
+
+  .facadecontact1, .facadecontact2 {
+      width: 90%;
+      margin-left: 5%;
+      border-radius: 15px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  header>div>div {
+      grid-template-columns: 1fr 1fr 2fr;
+      margin: 0 15%;
+  }
+
+  iframe {
+      height: 180px;
+  }
+
+  header>nav {
+      padding: 20px;
+  }
+
+  header>nav>a {
+      margin-right: 15px;
+  }
+
+  .body_container, .body_container2 {
+      width: 45%;
+      padding: 15px;
+  }
+
+  /* Competence grid layout */
+  #SELECT_COMPETENCES {
+      grid-template-columns: 1fr 1fr;
+  }
+
+  #SELECT_COMPETENCES > a {
+      padding: 5vh 0;
+  }
+
+  .map {
+      width: 80%;
+  }
+
+  .facadecontact1, .facadecontact2 {
+      width: 80%;
+      margin-left: 10%;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  header>div>div {
+      grid-template-columns: 1fr 1fr 3fr;
+      margin: 0 20%;
+  }
+
+  iframe {
+      height: 180px;
+  }
+
+  header>nav {
+      padding: 25px;
+  }
+
+  .body_container, .body_container2 {
+      width: 45%;
+      padding: 20px;
+  }
+
+  /* Competence grid layout */
+  #SELECT_COMPETENCES {
+      grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  #SELECT_COMPETENCES > a {
+      padding: 6vh 0;
+  }
+
+  .map {
+      width: 100%;
+  }
+
+  .facadecontact1, .facadecontact2 {
+      width: 85%;
+      margin-left: 8%;
+  }
+
+  #FOOTER {
+      display: grid;
+      grid-template-columns: 3fr 3fr 2fr;
+      grid-template-rows: 1fr;
+  }
+
+  #FOOTER > section {
+      padding: 20px;
+  }
+}
+
