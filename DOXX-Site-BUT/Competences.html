@@ -1,98 +1,242 @@
 <!DOCTYPE html>
 <html lang="fr">
-	<head>
-	    <meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="Site officiel de l'IUT III Paul Sabatier - DOXX. Découvrez nos programmes, ressources et actualités.">
-	    <link rel="stylesheet" type="text/css" href="Assets/Style/light.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" >
-		<link rel="icon" type="image/png" href="Assets/Images/Logo-Ragnarok.webp">
-	    <title>IUT III Paul Sabatier - Ragnarok</title>
-	</head>
-
-	<body>
-	    <header>
-			<div>
-				<div class="header">
-					<div class="logo-gauche">
-						<img src="Assets/Images/logo-universite-toulouse-iii.png" alt="Logo Université Toulouse III" >
-						<img src="Assets/Images/logo-iut-toulouse.png" alt="Logo IUT" >
-					</div>
-					<div class="logo-droit">
-						<img src="Assets/Images/logo-but-universitaire.png" alt="Logo BUT Universitaire" >
-					</div>
-				</div>
-				</div>
-
-				<nav>
-					<label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
-					 <input type='checkbox' name='check' id='check'>
-					 <div class="nav-bar">
-						<ul class='menu'>	
-						  
-							<li> <a href="index.html">Accueil</a></li>
-							<li> <a href="presentation.html">Présentation du BUT</a></li>
-							   <li class="has-submenu">
-								 <a href="Competences.html">Compétences</a>
-								  <ul class="submenu">
-								   
-								   <li><a href="ToutesCompetences/Competence1.html">Compétence 1</a></li>
-								   <li><a href="ToutesCompetences/Competence2.html">Compétence 2</a></li>
-								   <li><a href="ToutesCompetences/Competence3.html">Compétence 3</a></li>
-								   <li><a href="ToutesCompetences/Competence4.html">Compétence 4</a></li>
-								   <li><a href="ToutesCompetences/Competence5.html">Compétence 5</a></li>
-								   <li><a href="ToutesCompetences/Competence6.html">Compétence 6</a></li>
-								  </ul>
-								</li>
-						   
-						   <li> <a href="contact.html">Contact</a></li>
-						  
-						</ul>
-					 </div>
-					<label for="check" class="close-menu"><i class="fas fa-times"></i></label>
-				</nav>
-
-		</header>
-
-
-	    <main>
-    		<div id="SELECT_COMPETENCES">
-    			<a href="ToutesCompetences/Competence1.html">Compétence 1</a>
-    			<a href="ToutesCompetences/Competence2.html">Compétence 2</a>
-    			<a href="ToutesCompetences/Competence3.html">Compétence 3</a>
-    			<a href="ToutesCompetences/Competence4.html">Compétence 4</a>
-    			<a href="ToutesCompetences/Competence5.html">Compétence 5</a>
-    			<a href="ToutesCompetences/Competence6.html">Compétence 6</a>
-    		</div>
-	    </main>
-
-
-		<footer>
-			<div class="address">
-				<p>
-					IUT Paul Sabatier<br>
-					115C Route de Narbonne<br>
-					31077 TOULOUSE CEDEX 4
-				</p>
-			</div>
-			
-			<div class="links">
-				<h3>Liens utiles</h3>
-				<p>
-					<a target="_parent" href="index.html">Accueil</a><br>
-					<a target="_parent" href="presentation.html">Présentation</a><br>
-					<a target="_parent" href="Competences.html">Compétences</a><br>
-					<a target="_parent" href="contact.html">Contact</a>
-				</p>
-				<a href="https://www.cnil.fr/fr/rgpd-de-quoi-parle-t-on">CNIL - RGPD</a>
-			</div>
-			<div class="team">
-				<p>
-					On est l'équipe 7 du groupe B<br>
-					Cette équipe est composée de :<br>
-					Basset Adrien / Hisabu Nathan Tekeste / Magadiyev Imam / Cressent Titouan
-				</p>
-			</div>
-		</footer>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Compétences du BUT Informatique à l'IUT III Paul Sabatier - Ragnarok."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" type="image/png" href="Assets/Images/Logo-Ragnarok.webp" />
+    <title>Compétences - IUT III Paul Sabatier</title>
+  </head>
+  <body
+    class="bg-gradient-to-br from-blue-50 to-indigo-100 text-gray-900 min-h-screen"
+  >
+    <header class="bg-white shadow-lg border-b border-gray-200">
+      <div class="container mx-auto px-6 py-6">
+        <div class="flex justify-between items-center">
+          <div class="flex space-x-4">
+            <img
+              src="Assets/Images/logo-universite-toulouse-iii.png"
+              alt="Logo Université Toulouse III"
+              class="h-16 w-auto"
+            />
+            <img
+              src="Assets/Images/logo-iut-toulouse.png"
+              alt="Logo IUT"
+              class="h-16 w-auto"
+            />
+          </div>
+          <img
+            src="Assets/Images/logo-but-universitaire.png"
+            alt="Logo BUT Universitaire"
+            class="h-16 w-auto"
+          />
+        </div>
+      </div>
+      <nav
+        class="bg-gradient-to-r from-red-600 to-red-700 text-white shadow-md"
+      >
+        <div class="container mx-auto px-6">
+          <ul class="flex justify-center space-x-8 py-4">
+            <li>
+              <a
+                href="index.html"
+                class="hover:text-yellow-300 transition duration-300 font-medium"
+                >Accueil</a
+              >
+            </li>
+            <li>
+              <a
+                href="presentation.html"
+                class="hover:text-yellow-300 transition duration-300 font-medium"
+                >Présentation du BUT</a
+              >
+            </li>
+            <li class="relative group">
+              <a
+                href="Competences.html"
+                class="hover:text-yellow-300 transition duration-300 font-medium"
+                >Compétences</a
+              >
+              <ul
+                class="absolute left-0 mt-2 bg-white text-black shadow-lg rounded-md hidden group-hover:block z-10 min-w-max"
+              >
+                <li>
+                  <a
+                    href="ToutesCompetences/Competence1.html"
+                    class="block px-4 py-2 hover:bg-red-100 transition duration-200"
+                    >Compétence 1</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="ToutesCompetences/Competence2.html"
+                    class="block px-4 py-2 hover:bg-red-100 transition duration-200"
+                    >Compétence 2</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="ToutesCompetences/Competence3.html"
+                    class="block px-4 py-2 hover:bg-red-100 transition duration-200"
+                    >Compétence 3</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="ToutesCompetences/Competence4.html"
+                    class="block px-4 py-2 hover:bg-red-100 transition duration-200"
+                    >Compétence 4</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="ToutesCompetences/Competence5.html"
+                    class="block px-4 py-2 hover:bg-red-100 transition duration-200"
+                    >Compétence 5</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="ToutesCompetences/Competence6.html"
+                    class="block px-4 py-2 hover:bg-red-100 transition duration-200"
+                    >Compétence 6</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="hover:text-yellow-300 transition duration-300 font-medium"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="container mx-auto px-6 py-16">
+      <h1
+        class="text-4xl md:text-5xl font-extrabold text-center text-indigo-800 mb-12"
+      >
+        Compétences du BUT Informatique
+      </h1>
+      <div class="max-w-6xl mx-auto">
+        <p class="text-lg text-center text-gray-700 mb-12">
+          Le BUT Informatique développe 6 compétences transversales et
+          professionnelles.
+        </p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+          >
+            <div class="text-4xl text-indigo-600 mb-4">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Compétence 1</h3>
+            <p class="text-gray-600 mb-4">
+              Développer une application informatique
+            </p>
+            <a
+              href="ToutesCompetences/Competence1.html"
+              class="text-indigo-600 hover:text-indigo-800 font-medium"
+              >En savoir plus →</a
+            >
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+          >
+            <div class="text-4xl text-indigo-600 mb-4">
+              <i class="fas fa-database"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Compétence 2</h3>
+            <p class="text-gray-600 mb-4">
+              Optimiser des applications informatiques
+            </p>
+            <a
+              href="ToutesCompetences/Competence2.html"
+              class="text-indigo-600 hover:text-indigo-800 font-medium"
+              >En savoir plus →</a
+            >
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+          >
+            <div class="text-4xl text-indigo-600 mb-4">
+              <i class="fas fa-server"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Compétence 3</h3>
+            <p class="text-gray-600 mb-4">
+              Administrer des systèmes informatiques
+            </p>
+            <a
+              href="ToutesCompetences/Competence3.html"
+              class="text-indigo-600 hover:text-indigo-800 font-medium"
+              >En savoir plus →</a
+            >
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+          >
+            <div class="text-4xl text-indigo-600 mb-4">
+              <i class="fas fa-network-wired"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Compétence 4</h3>
+            <p class="text-gray-600 mb-4">Gérer des données</p>
+            <a
+              href="ToutesCompetences/Competence4.html"
+              class="text-indigo-600 hover:text-indigo-800 font-medium"
+              >En savoir plus →</a
+            >
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+          >
+            <div class="text-4xl text-indigo-600 mb-4">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Compétence 5</h3>
+            <p class="text-gray-600 mb-4">Conduire un projet informatique</p>
+            <a
+              href="ToutesCompetences/Competence5.html"
+              class="text-indigo-600 hover:text-indigo-800 font-medium"
+              >En savoir plus →</a
+            >
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+          >
+            <div class="text-4xl text-indigo-600 mb-4">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Compétence 6</h3>
+            <p class="text-gray-600 mb-4">Travailler en équipe</p>
+            <a
+              href="ToutesCompetences/Competence6.html"
+              class="text-indigo-600 hover:text-indigo-800 font-medium"
+              >En savoir plus →</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-gray-800 text-white py-8">
+      <div class="container mx-auto px-6 text-center">
+        <p>
+          &copy; 2025 IUT III Paul Sabatier - Ragnarok. Tous droits réservés.
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>
